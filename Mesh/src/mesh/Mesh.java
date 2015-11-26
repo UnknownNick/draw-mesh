@@ -71,16 +71,13 @@ class SetSpaceWindow extends Frame{
         this.add(t,BorderLayout.NORTH);
         
         
-        t.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int i = 0;
-                try{ i = Integer.valueOf(t.getText());
-                }   catch(java.lang.NumberFormatException ex){
-                    t.setText(null);
-                }
-                if(i>0)obj.setSpace(i);
+        t.addActionListener((ActionEvent e) -> {
+            int i = 0;
+            try{ i = Integer.valueOf(t.getText());
+            }   catch(java.lang.NumberFormatException ex){
+                t.setText(null);
             }
+            if(i>0)obj.setSpace(i);
         });
         
         
